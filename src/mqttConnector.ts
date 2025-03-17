@@ -1,6 +1,6 @@
 import { connect } from "mqtt";
 
-const client = connect("mqtt://test.mosquitto.org");
+const client = connect(process.env.MQTT_BROKER_URL);
 
 export function mqttConnect(callback: (data: string) => unknown) {
   client.on("connect", () => {
